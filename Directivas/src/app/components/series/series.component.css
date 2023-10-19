@@ -1,0 +1,24 @@
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+article {
+    width: 300px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+article img {
+    width: 100%;
+}
+
+.filaPar td {
+    background-color: lightblue;
+}
+
+.filaImpar td {
+    background-color: lightgray;
+}

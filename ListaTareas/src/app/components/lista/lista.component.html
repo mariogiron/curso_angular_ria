@@ -1,0 +1,7 @@
+<section>
+    <article *ngFor="let tarea of tareas; let i = index;">
+        <h2>{{ tarea.titulo }}</h2>
+        <p>{{ tarea.prioridad }}</p>
+        <button class="btn btn-danger" (click)="borrarTarea(i)">Borrar</button>
+    </article>
+</section>

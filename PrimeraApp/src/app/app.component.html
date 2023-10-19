@@ -1,0 +1,11 @@
+<h1>Hola Mundo</h1>
+<saludo></saludo>
+
+<app-formulario></app-formulario>
+
+<app-contador [inicio]="8" [fin]="16"></app-contador>
+<app-contador [inicio]="13"></app-contador>
+
+<app-cuenta-atras [inicio]="7" (finCuenta)="manejarFinCuenta($event)"></app-cuenta-atras>
+<app-cuenta-atras [inicio]="12"></app-cuenta-atras>
+<app-cuenta-atras (finCuenta)="manejarFinCuenta($event)"></app-cuenta-atras>

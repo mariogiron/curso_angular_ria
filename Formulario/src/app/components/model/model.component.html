@@ -1,0 +1,43 @@
+<div>
+    <p>{{formulario.valid}}</p>
+</div>
+
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input type="text" class="form-control" formControlName="name">
+        <p class="error" *ngIf="checkError('name', 'required')">
+            El nombre es requerido
+        </p>
+        <p class="error" *ngIf="checkError('name', 'minlength')">
+            La longitud mínima es {{formulario.get('name')?.errors?.['minlength']['requiredLength']}}
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Apellidos</label>
+        <input type="text" class="form-control" formControlName="surname">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="text" class="form-control" formControlName="email">
+        <p class="error" *ngIf="checkError('email', 'pattern')">
+            El email es incorrecto
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Edad</label>
+        <input type="text" class="form-control" formControlName="age">
+        <p class="error" *ngIf="checkError('age', 'agevalidator')">
+            La edad debe estar entre 18 y 65 años
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" formControlName="password">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Repite Password</label>
+        <input type="password" class="form-control" formControlName="repeat_password">
+    </div>
+    <input type="submit" value="Enviar" [disabled]="!formulario.valid">
+</form>

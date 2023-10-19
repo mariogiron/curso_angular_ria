@@ -1,0 +1,34 @@
+<section>
+    <article *ngFor="let serie of series">
+        <h3>{{ serie.title }}</h3>
+        <h5>{{ serie.creator }}</h5>
+        <img [src]="serie.image">
+        <p>Fechas: {{ serie.dates }}</p>
+    </article>
+</section>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Índice</th>
+            <th>Title</th>
+            <th>Creator</th>
+            <th>Dates</th>
+            <th>Rating</th>
+            <th>Channel</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let serie of series; let i = index; let first = first; let last = last; let even = even; let odd = odd; trackBy: trackSerie" [ngClass]="{
+            filaPar: even,
+            filaImpar: !even
+        }">
+            <td>{{i+1}}</td>
+            <td>{{serie.title}}</td>
+            <td>{{serie.creator}}</td>
+            <td>{{serie.dates}}</td>
+            <td>{{serie.rating}}</td>
+            <td>{{serie.channel}}</td>
+        </tr>
+    </tbody>
+</table>

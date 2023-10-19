@@ -1,0 +1,32 @@
+<!-- 
+
+    - Título de la tarea
+    - Prioridad (select)
+    - Button
+
+    label-> class: form-label
+    input-> class: form-control
+
+    div>(div>label.form-label+input:text.form-control)*2
+
+
+    - Cuando pulsemos al botón se EMITA hacia el padre el objeto Tarea que estamos rellenando en el formulario
+        - Capturar el click del botón
+        - Crear un Output -> EventEmitter
+        - Dentro del HTML del padre capturar el evento emitido
+ -->
+<div>
+    <div class="mb-3">
+        <label for="" class="form-label">Título</label>
+        <input type="text" class="form-control" [(ngModel)]="nuevaTarea.titulo">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Prioridad</label>
+        <select class="form-select" [(ngModel)]="nuevaTarea.prioridad">
+            <option value="baja">Baja</option>
+            <option value="media">Media</option>
+            <option value="urgente">Urgente</option>
+        </select>
+    </div>
+    <button class="btn btn-info" (click)="envioFormulario()">Enviar</button>
+</div>

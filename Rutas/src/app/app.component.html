@@ -1,0 +1,14 @@
+<header>
+  <nav>
+    <ul>
+      <li [routerLink]="['/home']">Home</li>
+      <li [routerLink]="['/profile']">Profile</li>
+    </ul>
+  </nav>
+</header>
+<router-outlet></router-outlet>
+<div>
+  <button (click)="handleClick('/home')">Home</button>
+  <button (click)="handleClick('/profile')">Profile</button>
+</div>
+<footer></footer>

@@ -1,0 +1,18 @@
+<input type="text" [(ngModel)]="mensaje">
+<p>{{mensaje}}</p>
+
+<div>
+    <div>
+        <label for="inputNombre">Nombre</label>
+        <input type="text" id="inputNombre" [(ngModel)]="contacto.nombre">
+    </div>
+    <div>
+        <label for="inputApellidos">Apellidos</label>
+        <input type="text" id="inputApellidos" [(ngModel)]="contacto.apellidos">
+    </div>
+    <div>
+        <label for="inputEdad">Edad</label>
+        <input type="text" id="inputEdad" [(ngModel)]="contacto.edad">
+    </div>
+</div>
+{{contacto | json}}

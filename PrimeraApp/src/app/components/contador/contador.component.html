@@ -1,0 +1,9 @@
+<div class="contador">
+    <p>{{numero}}</p>
+    <div>
+        <button (click)="modificarContador(false)">-</button>
+        <button (click)="modificarContador(true)">+</button>
+    </div>
+</div>
+
+<input type="text" (input)="cambioTexto($event)" />
