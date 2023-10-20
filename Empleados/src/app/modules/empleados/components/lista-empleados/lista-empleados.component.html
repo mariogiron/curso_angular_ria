@@ -1,1 +1,13 @@
-<p>lista-empleados works!</p>
+<section class="row">
+    <div class="col-3 mb-4" *ngFor="let empleado of empleados">
+        <article>
+            <h4>{{ empleado.nombre }} {{ empleado.apellidos }}</h4>
+            <p>Departamento: {{ empleado.departamento | uppercase }}</p>
+            <p>Email: {{empleado.email}}</p>
+            <p>Teléfono: {{empleado.telefono}}</p>
+            <p>Salario: {{empleado.salario | currency:'EUR' }}</p>
+            <p>Fecha creación: {{empleado.createdAt | date:'dd-MM-YYYY'}}</p>
+            <p> {{ 3232.434 | number:'1.1-2'}}</p>
+        </article>
+    </div>
+</section>
